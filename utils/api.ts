@@ -2,7 +2,6 @@
 import fs from "fs";
 
 const BASE_URL = "https://adventofcode.com";
-// const BASE_URL='https://adventofcode.com/2025/day/1/input'
 
 export const getInput = async ({
   year,
@@ -13,6 +12,10 @@ export const getInput = async ({
 }) => {
   const INPUT_CACHE_FOLDER = "./input-cache";
   const CACHED_FILE_PATH = `${INPUT_CACHE_FOLDER}/${year}-${day}.txt`;
+
+  if (!process.env.AOC_SESSION_KEY) {
+    throw new Error("AOC_SESSION_KEY is not set");
+  }
 
   if (fs.existsSync(CACHED_FILE_PATH)) {
     console.log(`Input for ${year}/${day} loaded from local file`);

@@ -2,7 +2,7 @@ import { afterEach, beforeAll, describe, expect, test } from "bun:test";
 import { main } from ".";
 import { getInput, testConfig } from "../utils";
 
-const day = 1;
+const day = 3;
 const year = new Date().getFullYear();
 
 const EXAMPLE_INPUT = `<EXAMPLE_INPUT_GOES_HERE>`;
